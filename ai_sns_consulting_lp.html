@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI×SNSで売れる導線を作る方法｜SNS収益化コンサル</title>
+  <meta name="description" content="フォロワー11万人・1投稿150万再生・月100万円達成。AI×SNSで売れる導線を作るコンサル・note導線サイト。" />
+  <style>
+    :root {
+      --black:#111111;
+      --white:#ffffff;
+      --cream:#fff8e7;
+      --pink:#ff3d9a;
+      --blue:#2e7dff;
+      --yellow:#ffde3d;
+      --green:#00c7b7;
+      --gray:#666666;
+      --light:#f7f7f7;
+      --radius:22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      color:var(--black);
+      background:var(--cream);
+      line-height:1.8;
+    }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1080px, 92%); margin:auto; }
+    header {
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,248,231,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:2px solid var(--black);
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
+      font-weight:800;
+    }
+    .logo { font-size:18px; }
+    .btn {
+      display:inline-block;
+      background:var(--black);
+      color:var(--white);
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:5px 5px 0 var(--pink);
+      transition:.2s;
+    }
+    .btn:hover { transform:translate(2px,2px); box-shadow:2px 2px 0 var(--pink); }
+    .hero {
+      padding:80px 0 60px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,61,154,.25), transparent 25%),
+        radial-gradient(circle at 90% 10%, rgba(0,199,183,.22), transparent 25%),
+        var(--cream);
+    }
+    .badge {
+      display:inline-block;
+      background:var(--yellow);
+      border:2px solid var(--black);
+      border-radius:999px;
+      padding:7px 15px;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+    h1 {
+      font-size:clamp(34px, 6vw, 68px);
+      line-height:1.15;
+      margin:0 0 22px;
+      letter-spacing:-.04em;
+    }
+    .lead { font-size:clamp(17px, 2.4vw, 24px); font-weight:700; max-width:760px; }
+    .hero-grid {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:34px;
+      align-items:center;
+    }
+    .stats {
+      display:grid;
+      gap:14px;
+    }
+    .stat {
+      background:var(--white);
+      border:3px solid var(--black);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:8px 8px 0 var(--black);
+    }
+    .stat strong { display:block; font-size:34px; line-height:1.1; }
+    section { padding:70px 0; }
+    h2 {
+      font-size:clamp(28px, 4vw, 46px);
+      line-height:1.2;
+      margin:0 0 24px;
+      letter-spacing:-.03em;
+    }
+    .sub { color:var(--gray); font-weight:700; margin-bottom:28px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card {
+      background:var(--white);
+      border:2px solid var(--black);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:5px 5px 0 var(--black);
+    }
+    .card h3 { margin:0 0 10px; font-size:22px; }
+    .story {
+      background:var(--black);
+      color:var(--white);
+      border-radius:32px;
+      padding:40px;
+    }
+    .story mark { background:var(--yellow); padding:2px 6px; }
+    .steps { counter-reset: step; display:grid; gap:18px; }
+    .step {
+      background:var(--white);
+      border:2px solid var(--black);
+      border-radius:var(--radius);
+      padding:24px;
+      display:grid;
+      grid-template-columns:70px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .step::before {
+      counter-increment: step;
+      content:"0" counter(step);
+      background:var(--pink);
+      color:var(--white);
+      border:2px solid var(--black);
+      border-radius:18px;
+      width:58px;
+      height:58px;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:22px;
+    }
+    .offer {
+      background:var(--white);
+      border:3px solid var(--black);
+      border-radius:32px;
+      padding:36px;
+      box-shadow:10px 10px 0 var(--green);
+    }
+    .offer ul { padding-left:1.2em; font-weight:700; }
+    .cta {
+      text-align:center;
+      background:linear-gradient(135deg, var(--pink), var(--blue));
+      color:var(--white);
+      padding:80px 0;
+    }
+    .cta h2 { color:var(--white); }
+    .note-box {
+      background:var(--yellow);
+      border:3px solid var(--black);
+      border-radius:32px;
+      padding:34px;
+      box-shadow:8px 8px 0 var(--black);
+    }
+    footer { padding:34px 0; text-align:center; color:var(--gray); font-weight:700; }
+    @media (max-width:850px){
+      .hero-grid, .cards { grid-template-columns:1fr; }
+      .step { grid-template-columns:1fr; }
+      .nav .btn { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo">AI×SNS収益化設計</div>
+      <a class="btn" href="#contact">相談する</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="badge">知識ゼロからでも始められる</div>
+          <h1>AI×SNSで<br>“売れる導線”を作る方法</h1>
+          <p class="lead">フォロワーを増やすだけで終わらせない。投稿・台本・分析・導線設計まで、収益につながるSNS運用をわかりやすく整理します。</p>
+          <p><a class="btn" href="#contact">まずは相談する</a></p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>11万人</strong>SNS総フォロワー</div>
+          <div class="stat"><strong>150万再生</strong>1投稿の最高再生数</div>
+          <div class="stat"><strong>月100万円</strong>最高収益実績</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap story">
+        <h2>正しいやり方を知るだけで、SNSは変わる。</h2>
+        <p>私自身、最初から全部わかっていたわけではありません。コンサルを受けて、考え方・投稿の作り方・数字の見方が変わりました。</p>
+        <p>そして数字が上がるようになると、SNSが楽しくなった。だから今度は、私がその知識をわかりやすくまとめて、同じように悩む人に届けたいと思っています。</p>
+        <p><mark>感覚ではなく、再現性のあるSNS設計へ。</mark></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>こんな悩みありませんか？</h2>
+        <p class="sub">SNSは頑張っているのに、売上や仕事につながらない人へ。</p>
+        <div class="cards">
+          <div class="card"><h3>何を投稿すればいいかわからない</h3><p>毎回ネタに悩み、投稿が止まってしまう。</p></div>
+          <div class="card"><h3>伸びても売れない</h3><p>再生数やフォロワーが増えても、商品や相談につながらない。</p></div>
+          <div class="card"><h3>時間が足りない</h3><p>リサーチ・台本・投稿・分析まで手が回らない。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>解決策は、AI×テンプレ×導線設計。</h2>
+        <p class="sub">ただ投稿するのではなく、売れる流れを設計します。</p>
+        <div class="steps">
+          <div class="step"><div><h3>コンセプト設計</h3><p>誰に、何を、どんな価値で届けるのかを明確にします。</p></div></div>
+          <div class="step"><div><h3>リサーチ</h3><p>伸びている投稿・売れている人・市場の反応を分析します。</p></div></div>
+          <div class="step"><div><h3>投稿テンプレ作成</h3><p>フック、問題提起、解決策、CTAまで型にします。</p></div></div>
+          <div class="step"><div><h3>AIで台本化</h3><p>AIを使って、投稿ネタ・ショート台本・改善案を効率化します。</p></div></div>
+          <div class="step"><div><h3>投稿と分析</h3><p>伸びた理由、落ちた理由を言語化し、次の投稿に活かします。</p></div></div>
+          <div class="step"><div><h3>収益導線を作る</h3><p>プロフィール、リンク、note、個別相談までの流れを整えます。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap offer">
+        <h2>SNS収益化コンサルでできること</h2>
+        <ul>
+          <li>アカウントコンセプト設計</li>
+          <li>投稿ネタ・台本テンプレ作成</li>
+          <li>AIを使った投稿効率化</li>
+          <li>リサーチ方法の整理</li>
+          <li>数字分析と改善提案</li>
+          <li>note・商品・個別相談への導線設計</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap note-box">
+        <h2>まず学びたい方へ</h2>
+        <p>個別コンサルの前に、AI×SNSの基本をnoteでもまとめています。</p>
+        <p><strong>おすすめnote：</strong>知識ゼロから始めるAI×SNS収益化ロードマップ</p>
+        <p><a class="btn" href="https://note.com/quiet_wolf6379" target="_blank" rel="noopener">noteを見る</a></p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <h2>SNSを“ただの投稿”で終わらせない。</h2>
+        <p class="lead" style="margin:auto auto 26px;">あなたの知識・経験・商品を、売れる導線に変えるSNS設計を一緒に作ります。</p>
+        <a class="btn" href="mailto:yourmail@example.com">相談する</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © AI×SNS収益化設計
+  </footer>
+</body>
+</html>
